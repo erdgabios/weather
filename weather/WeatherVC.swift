@@ -47,11 +47,4 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
-    
-    
-    
-    
-    
 }
