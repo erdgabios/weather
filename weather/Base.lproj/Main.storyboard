@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,12 +88,81 @@
                                     <constraint firstAttribute="trailing" secondItem="de7-8A-WWn" secondAttribute="trailing" constant="20" id="ly9-cL-BOy"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1we-5k-Azn">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="j4L-tb-nPa">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4L-tb-nPa" id="occ-lz-IuU">
+                                            <frame key="frameInset" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-Ud-dcP">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="e1t-dA-3ib"/>
+                                                        <constraint firstAttribute="height" constant="50" id="mJb-Q6-zq8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HQ-cP-EuB">
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-8o-b4I">
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-D8-LtH">
+                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnL-9n-zAy">
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-rE-NMP">
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 ℃" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-sh-f7Z">
+                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="22 ℃" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMX-5P-agG">
+                                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="47" id="hLx-v0-IjX"/>
+                                                                <constraint firstAttribute="height" constant="47" id="oFR-SU-1Qh"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3HQ-cP-EuB" secondAttribute="bottom" constant="10" id="CYL-i9-oHo"/>
+                                                <constraint firstItem="3HQ-cP-EuB" firstAttribute="leading" secondItem="9kb-Ud-dcP" secondAttribute="trailing" constant="8" id="DcN-4h-UFr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3HQ-cP-EuB" secondAttribute="trailing" constant="20" id="Edu-Mh-8Ow"/>
+                                                <constraint firstItem="3HQ-cP-EuB" firstAttribute="top" secondItem="occ-lz-IuU" secondAttribute="topMargin" constant="6" id="JOO-06-yyg"/>
+                                                <constraint firstItem="9kb-Ud-dcP" firstAttribute="top" secondItem="occ-lz-IuU" secondAttribute="topMargin" constant="6" id="Psp-Ej-IEP"/>
+                                                <constraint firstItem="9kb-Ud-dcP" firstAttribute="leading" secondItem="occ-lz-IuU" secondAttribute="leadingMargin" id="cj0-Bd-kCL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1we-5k-Azn" firstAttribute="top" secondItem="rbT-2V-99F" secondAttribute="bottom" id="10O-Ua-fpv"/>
+                            <constraint firstItem="1we-5k-Azn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DbL-G3-rDN"/>
                             <constraint firstItem="rbT-2V-99F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GnQ-s7-U9b"/>
                             <constraint firstAttribute="trailing" secondItem="rbT-2V-99F" secondAttribute="trailing" id="JRx-h5-kO3"/>
                             <constraint firstItem="rbT-2V-99F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jb8-1m-Hxm"/>
+                            <constraint firstAttribute="trailing" secondItem="1we-5k-Azn" secondAttribute="trailing" id="SMK-Gj-oQD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1we-5k-Azn" secondAttribute="bottom" id="fuP-wY-GCJ"/>
                         </constraints>
                     </view>
                 </viewController>
