@@ -91,14 +91,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1we-5k-Azn">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="80" id="j4L-tb-nPa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="80" id="j4L-tb-nPa" customClass="WeatherCell" customModule="weather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j4L-tb-nPa" id="occ-lz-IuU">
                                             <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-Ud-dcP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="9kb-Ud-dcP">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="e1t-dA-3ib"/>
                                                         <constraint firstAttribute="height" constant="50" id="mJb-Q6-zq8"/>
@@ -123,6 +123,9 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BsJ-rE-NMP">
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32 ℃" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-sh-f7Z">
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="lVb-OV-2Ot"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -134,7 +137,6 @@
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="47" id="hLx-v0-IjX"/>
                                                                 <constraint firstAttribute="height" constant="47" id="oFR-SU-1Qh"/>
                                                             </constraints>
                                                         </stackView>
@@ -152,6 +154,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="z2d-D8-LtH" id="N1A-4b-kLB"/>
+                                            <outlet property="highTemp" destination="wCw-sh-f7Z" id="K0i-UO-mq2"/>
+                                            <outlet property="lowTemp" destination="CMX-5P-agG" id="B40-Hk-nUC"/>
+                                            <outlet property="weatherIcon" destination="9kb-Ud-dcP" id="3Fp-JJ-Pcb"/>
+                                            <outlet property="weatherType" destination="qnL-9n-zAy" id="UCg-x3-8Mf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
