@@ -23,16 +23,9 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
-    
-    
-    
     var currentWeather: CurrentWeather!
     var forecast: Forecast!
     var forecasts = [Forecast]()
-    
-    
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,21 +35,15 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        
         currentWeather = CurrentWeather()
-        
-    
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         locationAuthStatus()
-        
     }
     
     func locationAuthStatus() {
@@ -70,21 +57,13 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 self.downloadForecastData {
                     self.updateMainUI()
                 }
-                
             }
-
-            
-            
             
         } else {
             locationManager.requestWhenInUseAuthorization()
             locationAuthStatus()
-            
         }
     }
-    
-    
-    
     
     func downloadForecastData(completed: @escaping DownloadComplete) {
         
@@ -110,14 +89,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 }
             }
             completed()
-            
         }
-        
     }
-    
-    
-    
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
